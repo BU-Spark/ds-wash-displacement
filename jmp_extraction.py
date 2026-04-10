@@ -42,6 +42,12 @@ schools_service = schools_service.rename(columns={"School-age population": "Popu
 #Merge Datasets
 jmp_data = pd.concat([households_facility, households_service, households_safely_managed, schools_service, healthcare_service])
 
+#Rename and Reorganize Columns
+jmp_data = jmp_data.rename(columns={"Facility type": "Facility Type"})
+jmp_data = jmp_data.rename(columns={"Service level": "Service Level"})
+jmp_data = jmp_data.rename(columns={"Safely managed element": "Safely Managed Element"})
+jmp_data = jmp_data[['ISO3', 'Country', 'Year', 'Sector', 'Residence/Schools/Facility Type', 'Service Type', 'Service Level', 'Facility Type', 'Safely Managed Element', 'Population', 'Coverage']]
+
 output_path = '/Users/kikoxu/Downloads/JMP/jmp_data.csv'
 jmp_data.to_csv(output_path, index=False)
 
