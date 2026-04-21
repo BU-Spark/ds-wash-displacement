@@ -48,6 +48,9 @@ jmp_data = jmp_data.rename(columns={"Service level": "Service Level"})
 jmp_data = jmp_data.rename(columns={"Safely managed element": "Safely Managed Element"})
 jmp_data = jmp_data[['ISO3', 'Country', 'Year', 'Sector', 'Residence/Schools/Facility Type', 'Service Type', 'Service Level', 'Facility Type', 'Safely Managed Element', 'Population', 'Coverage']]
 
+#Add column for Data Source
+jmp_data["source dataset"] = "JMP"
+
 output_path = '/Users/kikoxu/Downloads/JMP/jmp_data.csv'
 jmp_data.to_csv(output_path, index=False)
 
