@@ -104,11 +104,12 @@ def merge_csvs():
                 continue
 
         trend_df['EPI Week'] = pd.to_datetime(trend_df['time_group']).apply(format_epi_week)
-        cols = ['EPI Week'] + [c for c in trend_df.columns if c != 'EPI Week']
+        trend_df = trend_df.rename(columns={'time_group': 'date'})
+        cols = ['date'] + [c for c in trend_df.columns if c != 'date']
         trend_df = trend_df[cols]
-        trend_df.to_csv("ewars_trends.csv", index=False)
+        trend_df.to_csv("ewars_daily.csv", index=False)
         
-        print("\n[SUCCESS] Saved to ewars_trends.csv")
+        print("\n[SUCCESS] Saved to ewars_daily.csv")
         print(f"Total Rows: {len(trend_df)}")
         print(f"Total Columns: {len(trend_df.columns)}")
     else:
@@ -151,15 +152,15 @@ def merge_csvs():
                 print(f"  Columns it actually has: {list(incoming_df.columns)}")
                 continue
         
-        other_df.to_csv("ewars_other.csv", index=False)
+        # other_df.to_csv("ewars_other.csv", index=False)
         
-        print("\n[SUCCESS] Saved to ewars_other.csv")
-        print(f"Total Rows: {len(other_df)}")
-        print(f"Total Columns: {len(other_df.columns)}")
+        # print("\n[SUCCESS] Saved to ewars_other.csv")
+        # print(f"Total Rows: {len(other_df)}")
+        # print(f"Total Columns: {len(other_df.columns)}")
     else:
         print("\n[FAILED] No weekly CSV files found to merge")
     print(f"\nAggregating trend data into weeks for merging...")
-    trend_df.drop(columns=['time_group','location_type','Total Consultations'], inplace=True)
+    trend_df.drop(columns=['date','location_type','Total Consultations'], inplace=True)
     weekly_trend_df = trend_df.groupby(['EPI Week','governorate']).sum()
     weekly_df = pd.merge(
                 other_df,  
