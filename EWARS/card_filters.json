@@ -1,0 +1,107 @@
+{
+    "Percentage of reportable disease of total consultation": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
+    },
+    "Reporting Locations Per EPI Week": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
+    },
+    "Total Consultations from Reporting Locations per EPI Week": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
+    },
+    "Surveillance Completeness": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
+    },
+    "Surveillance Average Reporting Delay": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
+    },
+    "ARI Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "AWD Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Bloody Diarrhoea Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "AJS Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "AFP Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Measles Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Mumps Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Viral Meningitis Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Bacterial Meningitis Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Tuberculosis Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Cholera": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Diphtheria": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Suspected Tetanus": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Unusual Events": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Chickenpox Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Ectoparasitic Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Impetigo Trend": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    },
+    "Description of Unusual Events": {
+        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
+        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
+        "grouping": ["Daily"]
+    }
+}

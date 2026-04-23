@@ -9,116 +9,8 @@ import itertools
 DASHBOARD_UUID = "881c87a0-f2c6-440a-bab4-9996b5c0fb8c"
 BASE_URL = "https://bi.sehatty.ps"
 
-CARD_SPECIFIC_FILTERS = {
-    "Percentage of reportable disease of total consultation": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "Reporting Locations Per EPI Week": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "Total Consultations from Reporting Locations per EPI Week": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "Surveillance Completeness": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "Surveillance Timeliness": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "Surveillance Average Reporting Delay": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"]
-    },
-    "ARI Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "AWD Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Bloody Diarrhoea Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "AJS Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "AFP Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Measles Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Mumps Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Viral Meningitis Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Bacterial Meningitis Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Tuberculosis Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Cholera": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Diphtheria": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Suspected Tetanus": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Unusual Events": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Chickenpox Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Ectoparasitic Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Impetigo Trend": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    },
-    "Description of Unusual Events": {
-        "governorate": ["Deir Al-Balah", "Gaza", "Khan Yunis", "North Gaza", "Rafah"], 
-        "location_type": ["Ambulance Center", "Field Hospital", "Hospital", "Medical Point", "Mobile Clinic", "PHC"],
-        "grouping": ["Daily"]
-    }
-}
+with open("card_filters.json", "r") as f:
+    CARD_SPECIFIC_FILTERS = json.load(f)
 
 def generate_dynamic_payload(base_parameters, current_filters):
     params_copy = copy.deepcopy(base_parameters)
@@ -189,7 +81,7 @@ def export_dashboard():
 
         for combo in combinations:
             combo_label = "_".join([str(v).lower().replace(" ", "") for v in combo.values()])
-            folder_path = f"EWARS/raw-data/{safe_card_name}"
+            folder_path = f"raw-data/{safe_card_name}"
             os.makedirs(folder_path, exist_ok=True)
             
             custom_payload = generate_dynamic_payload(base_parameters, combo)
