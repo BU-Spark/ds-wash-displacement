@@ -10,10 +10,12 @@
 <h4 align="center">A template for the project readme file. </h4> <change to repo short description>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#project-description">Project Description</a> •
-  <a href="#data-locations">Data Locations</a>
+  <a href="#about-the-project">About</a> •
+  <a href="#dataset-snapshot">Dataset</a> •
+  <a href="#preprocessing--cleaning">Preprocessing</a> •
+  <a href="#pipeline">Pipeline</a> •
+  <a href="#deliverables">Deliverables</a> •
+  <a href="#known-gaps--recommended-next-steps">Known Gaps</a>
 </p>
 # WASH — Center for Forced Displacement
 ## HDX State of Palestine Data Pipeline
@@ -26,8 +28,8 @@
 | Field | Details |
 |---|---|
 | **Project Name** | WASH — Center for Forced Displacement (HDX Pipeline) |
-| **GitHub Repository** | *[(add link)](https://github.com/BU-Spark/ds-wash-displacement)* |
-| **Google Drive Folder** | *[(add link)](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A)* |
+| **GitHub Repository** | [ds-wash-displacement](https://github.com/BU-Spark/ds-wash-displacement) |
+| **Google Drive Folder** | [Google Drive](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A) |
 | **Client** | Dr. Amira Aker, BU School of Public Health |
 | **Client Contact** | amaker@bu.edu |
 | **Class** | SPARK / CDS / Spring 2026 |
@@ -41,7 +43,7 @@ This project consolidates fragmented humanitarian data related to WASH (Water, S
 
 | Field | Details |
 |---|---|
-| **Dataset Location** | *[(add GitHub or Drive link)](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A)* |
+| **Dataset Location** | [Google Drive](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A) |
 | **Tags** | ETL, Data Integration, Humanitarian, WASH, Health, Civic Tech |
 | **Access Type** | Open Access |
 
@@ -132,7 +134,7 @@ Each row represents **one indicator value for one reported incident**. The datas
 
 ## Pipeline
 
-The full pipeline is available in `hdx_pipeline.ipynb` *[(add link)](https://github.com/BU-Spark/ds-wash-displacement/blob/aymentig-patch-1/hdx_pipeline.ipynb)*.
+The full pipeline is available in [`hdx_pipeline.ipynb`](https://github.com/BU-Spark/ds-wash-displacement/blob/aymentig-patch-1/hdx_pipeline.ipynb).
 
 Running the notebook will:
 
@@ -168,6 +170,6 @@ To update the dataset when HDX publishes new files — download the latest Excel
 
 | Name | Role | Contact |
 |---|---|---|
-| Aymen | Data Engineer — HDX Pipeline | *aymentig@bu.edu* |
+| Aymen | Data Engineer — HDX Pipeline | aymentig@bu.edu |
 
 **Client:** Dr. Amira Aker — amaker@bu.edu
