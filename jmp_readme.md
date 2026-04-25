@@ -6,6 +6,8 @@
     - Schools based on service level (2019 - 2023)
     - Healthcare Facilities based on service level (2019 - 2023)
 
+To run on your local device, change pathway of the csv files and the outputpath.
+To look at a different range in time for the data, just change the pathway.
 
 # Variable Description
 
