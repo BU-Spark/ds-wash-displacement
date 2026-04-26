@@ -10,69 +10,166 @@
 <h4 align="center">A template for the project readme file. </h4> <change to repo short description>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#project-description">Project Description</a> •
-  <a href="#data-locations">Data Locations</a>
+  <a href="#about-the-project">About</a> •
+  <a href="#dataset-snapshot">Dataset</a> •
+  <a href="#preprocessing--cleaning">Preprocessing</a> •
+  <a href="#pipeline">Pipeline</a> •
+  <a href="#deliverables">Deliverables</a> •
+  <a href="#known-gaps--recommended-next-steps">Known Gaps</a>
 </p>
+# WASH — Center for Forced Displacement
+## HDX State of Palestine Data Pipeline
+**Spring 2026 | BU Spark! | CDS**
 
-## Key Features
-In this section you will be including a list of key features of your code/project.
+---
 
-You should also include a short description of what each part of your code does. (Detailed description in the readme of each directory, if applicable)
-* /path/to/directory - function and description
-  - Key notes
-* /path/to/script - function and description
-  - Key notes
-* Lorem Ipsum - Dolor Sit Amet
-  - Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-* Duis Aute Irure Dolor
-  - Excepteur sint occaecat
-* Excepteur Sint Occaecat
-  - Curabitur efficitur, nunc non ultricies gravida, felis purus posuere eros, sed faucibus sapien est nec quam. Nulla at nisl nisl.
- 
-## How To Use
+## Project Information
 
-To clone and run this application, you'll need <a href="https://git-scm.com" target="_blank">Git</a>
-From your command line:
+| Field | Details |
+|---|---|
+| **Project Name** | WASH — Center for Forced Displacement (HDX Pipeline) |
+| **GitHub Repository** | [ds-wash-displacement](https://github.com/BU-Spark/ds-wash-displacement) |
+| **Google Drive Folder** | [Google Drive](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A) |
+| **Client** | Dr. Amira Aker, BU School of Public Health |
+| **Client Contact** | amaker@bu.edu |
+| **Class** | SPARK / CDS / Spring 2026 |
 
-```bash
-# Clone this repository
-$ git clone [repo link]
+### About the Project
+This project consolidates fragmented humanitarian data related to WASH (Water, Sanitation, and Hygiene) conditions in Palestine into one centralized master dataset. Data on attacks against healthcare, food systems, water infrastructure, and displaced persons camps was scattered across multiple HDX Excel files with inconsistent structures. We built an automated Python pipeline to merge all sources into one clean, analysis-ready dataset — replacing manual collection workflows and laying the foundation for future outbreak monitoring and analysis.
 
-# Further Instructions
-...
-```
+---
 
-Create a new branch from dev, add changes on the new branch you just created.
+## Dataset Information
 
-You will want to look into <a href="https://git-scm.com/docs/git-branch" target="_blank">git branch</a> and <a href="https://git-scm.com/docs/git-checkout" target="_blank">git checkout</a>
+| Field | Details |
+|---|---|
+| **Dataset Location** | [Google Drive](https://drive.google.com/drive/folders/1Gtkj4HSNeKy4oQICiC25yWaIChnC5w3A) |
+| **Tags** | ETL, Data Integration, Humanitarian, WASH, Health, Civic Tech |
+| **Access Type** | Open Access |
 
-```bash
-# Create and Checkout a new branch if it doesn't exist
-$ git checkout -b your-branch main
-...
-```
+---
 
-Open a Pull Request to dev. Add your PM and TPM as reviewers. 
+## Dataset Snapshot
 
-At the end of the semester during project wrap up open a final Pull Request to main from dev branch.
- 
-## Project Description
+| Field | Full Dataset | Gaza Strip Only |
+|---|---|---|
+| **Size** | ~56 MB | ~23 MB |
+| **Number of instances** | 138,424 | 85,283 |
+| **Number of fields** | 26 | 15 |
+| **Date range** | 2016–2026 | 2016–2026 |
+| **Labeled classes** | N/A | N/A |
 
-In this section, you should include the project description, either from the client or spark.
+---
 
-Please make sure it reflects what you see on the documents (project description) you recieved.
+## Composition
 
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec vel nunc at libero ultrices tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris ut ligula nec risus posuere ultricies at et ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-* Veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### What each instance represents
+Each row represents **one indicator value for one reported incident**. The dataset is in long format — meaning if one incident had 14 indicators recorded, it becomes 14 rows.
 
-## Data locations
+### Columns
 
-In this section, you should include the location of all of your datasets for the project (if applicable)
+| Column | Description |
+|---|---|
+| `record_id` | Unique row ID prefixed by source (e.g. HEALTH-000042) |
+| `data_source` | Full source and managing org name |
+| `source_file` | Original HDX filename |
+| `indicator_code` | Short unique code per indicator (e.g. HDX_H_W_KILLED) |
+| `indicator_name` | Human-readable indicator name |
+| `indicator_category` | Thematic group (e.g. Healthcare Personnel, Water Infrastructure) |
+| `date` | Incident date (YYYY-MM-DD) |
+| `year` | Calendar year |
+| `admin_1` | Admin 1 region (Gaza Strip, West Bank, etc.) |
+| `reported_perpetrator` | Perpetrator category |
+| `reported_perpetrator_name` | Named perpetrator entity |
+| `weapon_used` | Weapon type used in incident |
+| `population_subgroup` | Affected population group |
+| `value` | Numeric indicator value (NULL if missing) |
+| `unit` | Unit of measurement (count, incident count) |
+| `missingness_flag` | NOT_MISSING or MISSING_AMBIGUOUS |
 
-<a href="dataset-documentation">Dataset Documentation</a>
-* Location 1: [location]
-  - [description]
-* Location 2: [location]
-  - [description]
+### Source Files
+
+| Source File | Theme | Date Range | Raw Incidents | Rows After Unpivot | Indicators |
+|---|---|---|---|---|---|
+| 2016-2026-pse-attacks-on-health-care | Health | 2016–2026 | 4,259 | 59,626 | 14 |
+| 2020-2026-pse-protection-in-danger | Protection | 2020–2026 | 6,897 | 75,867 | 11 |
+| 2024-2026-pse-food-systems | Food Security | 2023–2026 | 1,833 | 1,833 | 1 |
+| 2025-2026-pse-water-systems | Water | 2023–2026 | 122 | 1,098 | 9 |
+
+---
+
+## Collection Process
+
+- Data downloaded directly from the **Humanitarian Data Exchange (HDX)** as public Excel files
+- No scraping required for these 4 sources — HDX provides direct downloads
+- **Data collected:** April 2026
+- **Incident records span:** January 2016 – March 2026
+
+---
+
+## Preprocessing & Cleaning
+
+### Steps taken
+
+- Loaded all 4 raw Excel files using `pandas`
+- Extracted shared base columns (date, location, perpetrator, weapon) from each file into a standardized format
+- **Unpivoted (melted) indicator columns** from wide format to long format
+  - Before: one row per incident, one column per indicator
+  - After: one row per indicator per incident
+- Converted boolean indicator columns to `0/1`
+- Standardized column names across all 4 sources
+- Flagged all null/blank values as `MISSING_AMBIGUOUS` instead of dropping or assuming zero
+- Raw Excel files are preserved and not modified
+
+### Missingness Codebook
+
+| Flag | Definition | How to Handle |
+|---|---|---|
+| `NOT_MISSING` | Value is present and valid | Use as-is |
+| `MISSING_AMBIGUOUS` | Blank — unclear if zero, not recorded, or truly missing | Do NOT assume zero. Flag in analysis. |
+| `MISSING_NOT_COLLECTED` | Previously tracked but absent this period | Exclude from trend analysis or impute with justification |
+| `MISSING_NEVER_TRACKED` | Never collected for this region or period | Exclude entirely. Note as structural gap. |
+
+---
+
+## Pipeline
+
+The full pipeline is available in [`hdx_pipeline.ipynb`](https://github.com/BU-Spark/ds-wash-displacement/blob/aymentig-patch-1/hdx_pipeline.ipynb).
+
+Running the notebook will:
+
+1. Load the 4 raw HDX Excel files
+2. Standardize and merge all sources
+3. Export `hdx_master_dataset.csv` (full, 138k rows)
+4. Export `hdx_master_gaza.csv` (Gaza Strip only, 85k rows)
+
+To update the dataset when HDX publishes new files — download the latest Excel files and re-run the notebook.
+
+---
+
+## Deliverables
+
+| File | Description |
+|---|---|
+| `hdx_master_dataset.csv` | Full master dataset, 138,424 rows, 26 columns |
+| `hdx_master_gaza.csv` | Gaza Strip only, 85,283 rows, 22.8 MB |
+| `hdx_master_schema.xlsx` | Column dictionary, missingness codebook, indicator catalog, source summary |
+| `hdx_pipeline.ipynb` | Reproducible Jupyter notebook to regenerate dataset |
+
+---
+
+## Known Gaps & Recommended Next Steps
+
+- **EWARS dashboard** — live Metabase dashboard with no direct download, requires a scraping script. Not yet completed.
+- **Sources not yet integrated:** UNICEF JMP, WHO oPt, Gaza Joint WASH Assessment, daily casualties dataset, geographic shapefiles
+- **Dataset structure** may need reshaping depending on how the client wants to run downstream analysis
+
+---
+
+## Authors
+
+| Name | Role | Contact |
+|---|---|---|
+| Aymen | Data Engineer — HDX Pipeline | aymentig@bu.edu |
+
+**Client:** Dr. Amira Aker — amaker@bu.edu
