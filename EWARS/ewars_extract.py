@@ -9,6 +9,7 @@ import itertools
 DASHBOARD_UUID = "881c87a0-f2c6-440a-bab4-9996b5c0fb8c"
 BASE_URL = "https://bi.sehatty.ps"
 
+### Change to card_filters_health_facility.json to extract health facility names (will result in ~1 week long script runtime)
 with open("card_filters.json", "r") as f:
     CARD_SPECIFIC_FILTERS = json.load(f)
 
@@ -32,11 +33,18 @@ def export_dashboard():
     session = requests.Session()
     
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        'Host': 'bi.sehatty.ps',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:149.0) Gecko/20100101 Firefox/149.0',
         'Accept': 'application/json',
-        'Referer': f'{BASE_URL}/',
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-        'Cookie': 'metabase.DEVICE=6bd2c134-9605-429f-9089-88de9ebbe763'
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': f'{BASE_URL}/public/dashboard/{DASHBOARD_UUID}',
+        'Connection': 'keep-alive',
+        'Cookie': 'metabase.DEVICE=6bd2c134-9605-429f-9089-88de9ebbe763',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'Priority': 'u=0, i',
+        'TE': 'trailers'
     }
 
     print("Fetching master dashboard configuration...")

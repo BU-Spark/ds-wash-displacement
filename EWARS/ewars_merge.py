@@ -3,6 +3,7 @@ import pandas as pd
 import itertools
 import json
 
+### Change to card_filters_health_facility.json to extract health facility names (only do this if you changed in eWars_extract.py as well)
 with open("card_filters.json", "r") as f:
     CARD_SPECIFIC_FILTERS = json.load(f)
 
