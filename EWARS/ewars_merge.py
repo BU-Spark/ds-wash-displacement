@@ -13,8 +13,8 @@ def format_epi_week(date_val):
     start_date = date_val - pd.Timedelta(days=(date_val.weekday() + 1) % 7)
     end_date = start_date + pd.Timedelta(days=6)
     
-    year = date_val.isocalendar().year
-    week = date_val.isocalendar().week
+    year = end_date.isocalendar().year
+    week = end_date.isocalendar().week
     
     return f"{year}-WE{week:02d} ({start_date.strftime('%d-%b')} to {end_date.strftime('%d-%b')})"
 
@@ -134,7 +134,7 @@ def merge_csvs():
                 incoming_df.drop(columns=['EPI Weeks'], inplace=True)
             if 'Start Date' in incoming_df.columns:
                 incoming_df['EPI Week'] = pd.to_datetime(incoming_df['Start Date']).apply(format_epi_week)
-                incoming_df.drop(columns=['Start Date', 'End Date'], inplace=True)
+                # incoming_df.drop(columns=['Start Date', 'End Date'], inplace=True)
             if 'Active Locations' in incoming_df.columns:
                 incoming_df.drop(columns=['Active Locations'], inplace=True)
             if 'Expected Reports' in incoming_df.columns and card_source_name == 'Surveillance Completeness':
