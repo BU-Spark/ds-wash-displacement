@@ -94,7 +94,12 @@ def merge_csvs():
                 trend_df = pd.merge(
                     trend_df, 
                     incoming_df, 
-                    on=['time_group', 'governorate', 'location_type','Total Consultations'], 
+                    on=['time_group',
+                        'governorate',
+                        'location_type',
+                        'Total Consultations'
+                        #,'health_facility'
+                        ], 
                     how='outer'
                 )
             except KeyError as e:
